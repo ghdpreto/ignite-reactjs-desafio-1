@@ -1,0 +1,41 @@
+@import "../cores";
+
+.buscar {
+    display: flex;
+    gap: 0.5rem;
+
+    input {
+        flex: 1;
+        padding: 1rem;
+        line-height: 1.4;
+        border: 1px solid $gray-700;
+        border-radius: 8px;
+        background-color: $gray-500;
+        color: $gray-100;
+
+        &::placeholder {
+            color: $gray-300;
+        }
+    }
+}
+
+.botao {
+    border: none;
+    background-color: $blue-dark;
+    border-radius: 8px;
+    color: $gray-100;
+    font-weight: 700;
+    padding: 1rem;
+    display: flex;
+    font-size: 0.875rem;
+    align-items: center;
+    gap: 0.5rem;
+
+    transition: background-color 0.1s;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: $blue;
+    }
+}

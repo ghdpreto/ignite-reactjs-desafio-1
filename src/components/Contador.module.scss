@@ -1,0 +1,28 @@
+@import "../cores";
+
+.contadorBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .criadas {
+        color: $blue;
+        font-weight: bold;
+        font-size: 0.875rem;
+    }
+
+    .concluidas {
+        color: $purple;
+        font-weight: bold;
+        font-size: 0.875rem;
+    }
+}
+
+.contador {
+    color: $gray-200;
+    background-color: $gray-400;
+    padding: 2px 8px;
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 999px;
+}
