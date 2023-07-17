@@ -6,7 +6,7 @@ import "./global.scss";
 import { Contador } from "./components/Contador";
 import { Tarefa } from "./components/Tarefa";
 import { ITarefa } from "./interfaces/Tarefa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import semTarefaSvg from "./assets/sem-tarefa.svg";
 
@@ -31,15 +31,36 @@ export function App() {
       completa: false,
       descricao: conteudo,
     };
+    const tarefasAtual = [...tarefas, novaTarefa];
 
-    setTarefas([...tarefas, novaTarefa]);
+    setTarefas(tarefasAtual);
   }
 
   function deletarTarefa(tarefa: ITarefa) {
     const tarefasAtualizda = tarefas.filter((el) => el.id !== tarefa.id);
-
     setTarefas(tarefasAtualizda);
   }
+
+  function salvarLocalStorage() {
+    localStorage.setItem("@tarefas-todo", JSON.stringify(tarefas));
+  }
+
+  useEffect(() => {
+    console.log("Feito por ghdpreto");
+    const dados = localStorage.getItem("@tarefas-todo");
+
+    if (dados === null) {
+      // cria um novo item no local storage
+      localStorage.setItem("@tarefas-todo", "[]");
+      setTarefas([]);
+    } else {
+      setTarefas(JSON.parse(dados));
+    }
+  }, []);
+
+  useEffect(() => {
+    salvarLocalStorage();
+  }, [tarefas]);
 
   const totalDeTarefas = tarefas.length;
   const totalDeTarefaConcluidas = tarefas.filter((el) => el.completa).length;
