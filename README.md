@@ -1,7 +1,7 @@
 # Todo App
 
 <h1 align="center">
-    <a href="https://ignite-reactjs-desafio-1.vercel.app/">
+    <a align="center" href="https://ignite-reactjs-desafio-1.vercel.app/">
         <img alt="Happy" title="Happy" src=".github/todo-app.svg" />
     </a>
 </h1>
