@@ -12,7 +12,7 @@ Aplicação Todo para estudos de ReactJS
 
 Link: https://ignite-reactjs-desafio-1.vercel.app/
 
-### Funcionalidades
+## Funcionalidades
 
 - [x] Adicionar uma nova tarefa
 - [x] Marcar e desmarcar uma tarefa como concluída
